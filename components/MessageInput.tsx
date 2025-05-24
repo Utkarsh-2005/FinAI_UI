@@ -10,6 +10,7 @@ import {
   ChevronDown,
   Bold,
   Italic,
+  Code,
   Link as LinkIcon,
   Bot,
 } from 'lucide-react'
@@ -119,8 +120,8 @@ export default function MessageInput({ onSend }: MessageInputProps) {
               100% { width: 100%; }
             }
           `}</style>
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white border rounded-md shadow p-1 flex flex-col space-y-1 z-50 max-w-[90vw] overflow-x-auto">
-              <div className="flex space-x-2 flex-nowrap overflow-x-auto">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white border rounded-md shadow p-1 flex flex-col space-y-1 z-50">
+            <div className="flex space-x-2">
               <div className="relative">
                 <button
                   onMouseDown={e => e.preventDefault()}
@@ -194,11 +195,8 @@ export default function MessageInput({ onSend }: MessageInputProps) {
 
       <div className="relative">
         {!html && (
-          <div className="absolute inset-0 px-3 sm:py-2 text-gray-400 pointer-events-none select-none z-10 flex">
-           
-               Use ⌘K for shortcuts (Select text to use AI)
-       
-           
+          <div className="absolute inset-0 px-3 sm:py-2 text-gray-400 pointer-events-none select-none z-10">
+            Use ⌘K for shortcuts  (Select text to use AI)
           </div>
         )}
         <div
@@ -224,7 +222,7 @@ export default function MessageInput({ onSend }: MessageInputProps) {
           <div className="relative z-50">
             <button
               onClick={() => setEmojiOpen(e => !e)}
-              className="hover:text-gray-700"
+              className="hover:text-gray-700 mt-1"
             >
               <Smile size={18} />
             </button>
