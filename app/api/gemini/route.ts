@@ -64,14 +64,16 @@ export async function POST(request: NextRequest) {
       case 'Translate...':
         userPrompt = `Translate the following to the target language:\n"${text}"`
         break
-    }
-
-    const transformed = await runPrompt(userPrompt)
-    return NextResponse.json({ transformed })
-  } catch (err: any) {
+    }    const transformed = await runPrompt(userPrompt)
+    return NextResponse.json({ transformed })  } catch (err: unknown) {
     console.error('Gemini API error:', err)
+    if (err instanceof Error) {      return NextResponse.json(
+        { error: err.message || 'Server error' },
+        { status: 500 }
+      )
+    }
     return NextResponse.json(
-      { error: err.message || 'Server error' },
+      { error: 'Server error' },
       { status: 500 }
     )
   }

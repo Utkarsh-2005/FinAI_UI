@@ -1,11 +1,13 @@
 'use client';
+import Image from 'next/image';
+
 export default function AIPanel() {
   return (
     <div className="h-full p-6 flex flex-col bg-gradient-to-br from-purple-100 via-purple-50 to-pink-50">
       <div className="h-[75%] flex items-center">
           <div className="mb-4 text-center">
           <div className="inline-block">
-               <img src="/logo.png" alt="Fin logo" className="h-9 w-9" />
+               <Image src="/logo.png" alt="Fin logo" width={36} height={36} />
           </div>
         <h2 className="text-xl font-semibold">Hi, I’m Fin AI Copilot</h2>
         <p className="text-gray-600">Ask me anything about this conversation.</p>
