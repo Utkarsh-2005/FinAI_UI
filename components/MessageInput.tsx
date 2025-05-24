@@ -119,8 +119,8 @@ export default function MessageInput({ onSend }: MessageInputProps) {
               100% { width: 100%; }
             }
           `}</style>
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white border rounded-md shadow p-1 flex flex-col space-y-1 z-50">
-            <div className="flex space-x-2">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-white border rounded-md shadow p-1 flex flex-col space-y-1 z-50 max-w-[90vw] overflow-x-auto">
+              <div className="flex space-x-2 flex-nowrap overflow-x-auto">
               <div className="relative">
                 <button
                   onMouseDown={e => e.preventDefault()}
@@ -157,7 +157,7 @@ export default function MessageInput({ onSend }: MessageInputProps) {
                 H2
               </button>
               <button onMouseDown={e => e.preventDefault()} onClick={() => exec('insertUnorderedList')}>
-                • List
+                •List
               </button>
               <button
                 onMouseDown={e => e.preventDefault()}
