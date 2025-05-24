@@ -46,6 +46,9 @@ export async function POST(request: NextRequest) {
     let userPrompt = text
 
     switch (mode) {
+      case 'Copilot':
+         userPrompt = `You are a helpful Customer Service AI agent. Answer and assist with any query asked.:\n"${text}"`
+        break
       case 'Rephrase':
         userPrompt = `Rephrase the following text, preserving its meaning:\n"${text}"`
         break
