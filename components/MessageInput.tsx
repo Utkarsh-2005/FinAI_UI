@@ -209,7 +209,7 @@ export default function MessageInput({ onSend }: MessageInputProps) {
             updateToolbar()
           }}
           onBlur={() => setTimeout(updateToolbar, 100)}
-          className="px-3 py-2 border border-gray-200 rounded-md focus:outline-none whitespace-pre-wrap break-words selection:bg-blue-200 relative z-20"
+          className="px-3 py-2 rounded-md focus:outline-none whitespace-pre-wrap break-words selection:bg-blue-200 relative z-20"
           style={{ height: 'auto', maxHeight: '200px', wordBreak: 'break-word', overflow: 'hidden' }}
         />
       </div>

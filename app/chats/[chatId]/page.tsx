@@ -1,21 +1,19 @@
-import { chats } from '@/data/dummyChats';
-import AdminLayout from '@/components/AdminLayout';
-import Conversation from '@/components/Conversation';
+import { chats } from '@/data/dummyChats'
+import AdminLayout from '@/components/AdminLayout'
+import Conversation from '@/components/Conversation'
+import { notFound } from 'next/navigation'
 
-type PageProps = {
-  params: {
-    chatId: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+interface PageProps {
+  params: { chatId: string }
+}
 
-export default function ChatPage({ params }: PageProps) {
-  const chat = chats.find(c => c.id === params.chatId);
-  if (!chat) return <div className="p-4">Chat not found.</div>;
+export default function Page({ params }: PageProps) {
+  const chat = chats.find((c) => c.id === params.chatId)
+  if (!chat) notFound()
 
   return (
     <AdminLayout>
       <Conversation chat={chat} />
     </AdminLayout>
-  );
+  )
 }
