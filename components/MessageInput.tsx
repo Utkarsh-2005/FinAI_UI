@@ -194,8 +194,11 @@ export default function MessageInput({ onSend }: MessageInputProps) {
 
       <div className="relative">
         {!html && (
-          <div className="absolute inset-0 px-3 py-2 text-gray-400 pointer-events-none select-none z-10">
-            Use ⌘K for shortcuts  (Select text to use AI)
+          <div className="absolute inset-0 px-3 sm:py-2 text-gray-400 pointer-events-none select-none z-10 flex">
+           
+               Use ⌘K for shortcuts (Select text to use AI)
+       
+           
           </div>
         )}
         <div
