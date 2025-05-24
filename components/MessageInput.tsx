@@ -10,7 +10,6 @@ import {
   ChevronDown,
   Bold,
   Italic,
-  Code,
   Link as LinkIcon,
   Bot,
 } from 'lucide-react'
